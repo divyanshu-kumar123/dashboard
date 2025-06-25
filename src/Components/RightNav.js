@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 function RightNav() {
   return (
-    <nav className="navbar navbar-light bg-light justify-content-between border">
+    <nav className="navbar navbar-light bg-light justify-content-between">
       <Link to="" className="navbar-brand pt-0">
       <img width={'20rem'} src="./Assets/kite-logo.svg"/>
       </Link>
