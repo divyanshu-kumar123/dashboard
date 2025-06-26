@@ -1,5 +1,4 @@
 import React from "react";
-import InfoBlock from "./InfoBlock";
 import InfoBlockContainer from "./InfoBlockContainer";
 
 function LeftPane() {
