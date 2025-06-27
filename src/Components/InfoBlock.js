@@ -8,50 +8,71 @@ function InfoBlock({
   absolutePrice = "65473.3",
 }) {
   const [isProfit, setIsProfit] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
   useEffect(() => {
     setIsProfit(parseFloat(pricingPercent) > 0);
   }, [pricingPercent]);
+
   return (
     <div
-      className="container-fluid border-bottom row"
+      className="container-fluid border-bottom row position-relative overflow-hidden"
       style={{ height: "2.8rem", lineHeight: 2 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Main InfoBlock Content */}
       <div className="col-md-5">
         <span
           className={
             !isProfit
-              ? "text-red-c fs-5 fw-normal"
-              : "text-green-c fs-5 fw-normal"
+              ? "text-red-c text-small-c fw-normal"
+              : "text-green-c text-small-c fw-normal"
           }
         >
-          {" "}
           {title}
         </span>
-        <span className="text-xsmall-c text-gray-c pb-1 opacity-75">{tag}</span>
+        <span className="text-xsmall-c text-gray-c pb-1 opacity-75 ms-2">
+          {tag}
+        </span>
       </div>
-      <div className="col-md-7 pt-1 text-end">
-        <div className="info justify-content-end">
-          <span className="opacity-50 text-gray-c">{pricing}</span>&nbsp;
-          <span className="text-gray-c text-small-c ms-1 me-1">
-            {pricingPercent}%
-          </span>
-          &nbsp;
-          <span
-            className={
-              !isProfit
-                ? "text-small-c text-red-c"
-                : "text-small-c text-green-c"
-            }
-          >
-            {!isProfit ? (
-              <i class="fa-solid fa-chevron-down"></i>
-            ) : (
-              <i class="fa-solid fa-angle-up"></i>
-            )}
-            {absolutePrice} %
-          </span>
+
+      <div className="col-md-7 pt-1 text-end d-flex justify-content-end align-items-center gap-2">
+        <span className="opacity-50 text-gray-c">{pricing}</span>
+        <span className="text-gray-c text-small-c">{pricingPercent}%</span>
+        <span
+          className={
+            !isProfit
+              ? "text-small-c text-red-c"
+              : "text-small-c text-green-c"
+          }
+        >
+          {!isProfit ? (
+            <i className="fa-solid fa-chevron-down"></i>
+          ) : (
+            <i className="fa-solid fa-angle-up"></i>
+          )}
+          {absolutePrice} %
+        </span>
+      </div>
+
+      {/* Hover Buttons Overlay */}
+      {isHovered && (
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-end align-items-center pe-3"
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0)",
+            zIndex: 10,
+          }}
+        >
+          <button className="btn btn-sm btn-primary me-1 ps-3 pe-3 border">B</button>
+          <button className="btn btn-sm btn-danger me-1 ps-3 pe-3 border">s</button>
+          <button className="btn btn-sm btn-light me-1 border"><i class="fa-solid fa-align-center"></i></button>
+          <button className="btn btn-sm btn-light me-1 border"><i class="fa-solid fa-chart-line"></i></button>
+          <button className="btn btn-sm btn-light me-1 border"><i class="fa-solid fa-trash-can"></i></button>
+          <button className="btn btn-sm btn-light me-1 border"><i class="fa-solid fa-ellipsis"></i></button>
         </div>
-      </div>
+      )}
     </div>
   );
 }

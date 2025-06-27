@@ -64,8 +64,8 @@ const orders = [
   },
 ];
 
-function OrderTable() {
-  let [hoveredRowIndex, setHoveredRowIndex] = useState(null)
+function ExecutedOrderTable() {
+  let [hoveredRowIndex, setHoveredRowIndex] = useState(null);
   return (
     <div className="table-responsive text-small-c mb-5">
       <table className="table align-middle table-hover text-start">
@@ -87,11 +87,9 @@ function OrderTable() {
             <th className="text-small-c text-secondary fw-normal opacity-75 ">
               Qty
             </th>
+            {/* <th className='text-small-c text-secondary fw-normal opacity-75'>LTP</th> */}
             <th className="text-small-c text-secondary fw-normal opacity-75">
-              LTP
-            </th>
-            <th className="text-small-c text-secondary fw-normal opacity-75">
-              Price
+              Avg. Price
             </th>
             <th className="text-small-c text-secondary fw-normal opacity-75">
               Status
@@ -102,7 +100,7 @@ function OrderTable() {
           {orders.map((order, index) => (
             <tr
               key={index}
-              className="border-bottom fw-lighter position-relative"
+              className="border-bottom fw-lighter position-relative "
               onMouseEnter={() => setHoveredRowIndex(index)}
               onMouseLeave={() => setHoveredRowIndex(null)}
             >
@@ -118,7 +116,7 @@ function OrderTable() {
               <td className="text-gray-c">{order.instrument}</td>
               <td className="text-gray-c">{order.product}</td>
               <td className="text-gray-c">{order.qty}</td>
-              <td className="text-gray-c text-end">{order.ltp}</td>
+              {/* <td className='text-gray-c text-end'>{order.ltp}</td> */}
               <td className="text-gray-c text-end">{order.price}</td>
               <td className="text-gray-c border-start">
                 <OrderStatus status={order.status.toLocaleLowerCase()} />
@@ -133,7 +131,10 @@ function OrderTable() {
                     zIndex: 1,
                   }}
                 >
-                  <button className="btn btn-sm btn-light pt-0" style={{border:'1px solid blue', height:'20px'}}>
+                  <button
+                    className="btn btn-sm btn-light pt-0"
+                    style={{ border: "1px solid blue", height: "20px" }}
+                  >
                     <i className="fa-solid fa-ellipsis fs-4 text-primary"></i>
                   </button>
                 </div>
@@ -146,4 +147,4 @@ function OrderTable() {
   );
 }
 
-export default OrderTable;
+export default ExecutedOrderTable;
