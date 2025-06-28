@@ -1,68 +1,7 @@
 import React, { useState } from "react";
 import OrderStatus from "./OrderStatus";
+import { orders } from "../Data";
 
-const orders = [
-  {
-    time: "13:32:12",
-    type: "BUY",
-    instrument: "SBIN BSE",
-    product: "MIS",
-    qty: "0/1",
-    ltp: "586.50",
-    price: "585.00 / 585.00 trg.",
-    status: "OPEN",
-  },
-  {
-    time: "13:29:52",
-    type: "BUY",
-    instrument: "VEDL NSE",
-    product: "CNC",
-    qty: "0/1",
-    ltp: "279.45",
-    price: "0.00 / 290.00 trg.",
-    status: "complete",
-  },
-  {
-    time: "13:35:15",
-    type: "BUY",
-    instrument: "USDINR 23MAY FUT CDS",
-    product: "NRML",
-    qty: "0/1",
-    ltp: "82.4225",
-    price: "81.0000",
-    status: "OPEN",
-  },
-  {
-    time: "13:34:15",
-    type: "BUY",
-    instrument: "USDINR 23MAY FUT CDS",
-    product: "MIS",
-    qty: "0/1",
-    ltp: "82.4225",
-    price: "81.0000",
-    status: "rejected",
-  },
-  {
-    time: "13:39:12",
-    type: "BUY",
-    instrument: "INFY NSE",
-    product: "CO",
-    qty: "0/1",
-    ltp: "49.30",
-    price: "49.50 / 48.50 trg.",
-    status: "Complete",
-  },
-  {
-    time: "13:39:12",
-    type: "SELL",
-    instrument: "PNB NSE",
-    product: "CO",
-    qty: "0/1",
-    ltp: "49.30",
-    price: "0.00 / 48.50 trg.",
-    status: "OPEN",
-  },
-];
 
 function OrderTable() {
   let [hoveredRowIndex, setHoveredRowIndex] = useState(null)

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import setTextColor from "../setTextColor";
 
 function InfoBlock({
   title = "SENSEX",
@@ -24,11 +25,7 @@ function InfoBlock({
       {/* Main InfoBlock Content */}
       <div className="col-md-5">
         <span
-          className={
-            !isProfit
-              ? "text-red-c text-small-c fw-normal"
-              : "text-green-c text-small-c fw-normal"
-          }
+          className={setTextColor("text-small-c fw-normal", pricingPercent)}
         >
           {title}
         </span>
@@ -41,18 +38,11 @@ function InfoBlock({
         <span className="opacity-50 text-gray-c">{pricing}</span>
         <span className="text-gray-c text-small-c">{pricingPercent}%</span>
         <span
-          className={
-            !isProfit
-              ? "text-small-c text-red-c"
-              : "text-small-c text-green-c"
-          }
+          className={setTextColor("text-small-c", pricingPercent)}
         >
-          {!isProfit ? (
-            <i className="fa-solid fa-chevron-down"></i>
-          ) : (
-            <i className="fa-solid fa-angle-up"></i>
-          )}
-          {absolutePrice} %
+
+          {pricingPercent<=0 ? <i className="fa-solid fa-chevron-down"></i> :    <i className="fa-solid fa-angle-up"></i>}
+          {absolutePrice}
         </span>
       </div>
 

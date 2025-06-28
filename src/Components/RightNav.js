@@ -10,7 +10,7 @@ function RightNav() {
       <div className="form-inline">
         <Link to="/" className="text-gray-c text-small-c ms-4">Dashboard</Link>
         <Link to="/order" className="text-gray-c text-small-c ms-4">Order</Link>
-        <Link to="/" className="text-gray-c text-small-c ms-4">Holdings</Link>
+        <Link to="/holdings" className="text-gray-c text-small-c ms-4">Holdings</Link>
         <Link to="/" className="text-gray-c text-small-c ms-4">Positions</Link>
         <Link to="/" className="text-gray-c text-small-c ms-4">Bid</Link>
         <Link to="/" className="text-gray-c text-small-c ms-4 me-5">Funds</Link>
