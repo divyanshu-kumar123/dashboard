@@ -19,23 +19,6 @@ A frontend clone of the popular stock trading platform **Zerodha (Kite)** built 
 
 ---
 
-## 📁 Project Structure
-zerodha-clone/
-├── public/
-│ └── index.html
-│ └── Assets / #All the image used
-├── src/
-│ ├── components/ # Reusable UI components (Navbar, Tables, etc.)
-│ ├── pages/ # Page-level components (Dashboard, Holdings, etc.)
-│ ├── App.js # Root component
-│ ├── index.js # App entry point
-│ └── App.css # Global styles
-├── .gitignore
-├── package.json
-└── README.md
-
-
----
 
 ## 🧑‍💻 Technologies Used
 
