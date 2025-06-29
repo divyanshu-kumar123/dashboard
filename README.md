@@ -31,8 +31,6 @@ A frontend clone of the popular stock trading platform **Zerodha (Kite)** built 
 
 ## 📸 Screenshots
 
-> Replace these with your own if available
-
 - ![Dashboard Screenshot]![alt text](image.png)
 - ![Holdings Table]![alt text](image-1.png)
 - ![Order table]![alt text](image-2.png)
