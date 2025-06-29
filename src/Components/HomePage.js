@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import OrderPage from "./OrderPage";
 import HoldingsPage from "./HoldingsPage";
+import PositionPage from "./PositionPage";
 
 function HomePage() {
   return (
@@ -19,7 +20,7 @@ function HomePage() {
             <Route path="/" element={<Dashboard/>} />
             <Route path="/order" element={<OrderPage/>} />
             <Route path="/holdings" element={<HoldingsPage />} />
-         
+            <Route path="/positions" element={<PositionPage />} />
           </Routes>
 
         </div>

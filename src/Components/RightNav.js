@@ -11,7 +11,7 @@ function RightNav() {
         <Link to="/" className="text-gray-c text-small-c ms-4">Dashboard</Link>
         <Link to="/order" className="text-gray-c text-small-c ms-4">Order</Link>
         <Link to="/holdings" className="text-gray-c text-small-c ms-4">Holdings</Link>
-        <Link to="/" className="text-gray-c text-small-c ms-4">Positions</Link>
+        <Link to="/positions" className="text-gray-c text-small-c ms-4">Positions</Link>
         <Link to="/" className="text-gray-c text-small-c ms-4">Bid</Link>
         <Link to="/" className="text-gray-c text-small-c ms-4 me-5">Funds</Link>
         <Link to="/" className="text-gray-c text-small-c ms-4 "><i class="fa-regular fa-bell"></i></Link>
